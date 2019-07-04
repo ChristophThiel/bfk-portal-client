@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-red, 900);
+$accent: mat-palette($mat-red);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+@import './colors.scss';
+
+html, body { 
+  height: 100%;
+}
+
+body { 
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+mat-toolbar button {
+  margin-right: 16px !important;
+}
+
+.container {
+  margin: 16px;
+}

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  Übersicht
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #sidenav mode="over">
+    <app-dashboard-entry *ngFor="let item of items" (click)="selectItem(item)"
+      [color]="item.isSelected ? '#FFCDD2' : ''" [content]="item.content" [icon]="item.icon">
+    </app-dashboard-entry>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <app-overview></app-overview>
+  </mat-drawer-content>
+</mat-drawer-container>
