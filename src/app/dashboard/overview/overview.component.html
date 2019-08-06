@@ -1,11 +1,13 @@
 <div class="no-work" *ngIf="appointments.length === 0">
   <mat-icon>work_off</mat-icon>
-  <p>Keine Dienste <br> oder Termine!</p>
+  <p>Keine Aufgaben!</p>
 </div>
 
-<div class="container">
-  <mat-tab-group headerPosition="below" mat-stretch-tabs>
-    <mat-tab label="Dienste"></mat-tab>
-    <mat-tab label="Termine"> Content 2 </mat-tab>
+<div class="container" *ngIf="appointments.length !== 0">
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Dienste">
+      <app-appointment></app-appointment>
+    </mat-tab>
+    <mat-tab label="Termine"></mat-tab>
   </mat-tab-group>
 </div>

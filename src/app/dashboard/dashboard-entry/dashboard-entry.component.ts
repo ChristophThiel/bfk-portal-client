@@ -16,5 +16,8 @@ export class DashboardEntryComponent {
   @Input()
   public icon: string;
 
+  @Input()
+  public route: string;
+
   constructor() { }
 }

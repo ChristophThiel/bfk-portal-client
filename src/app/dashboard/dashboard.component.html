@@ -2,17 +2,17 @@
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  Übersicht
+  {{currentComponent}}
 </mat-toolbar>
 
 <mat-drawer-container>
   <mat-drawer #sidenav mode="over">
     <app-dashboard-entry *ngFor="let item of items" (click)="selectItem(item)"
-      [color]="item.isSelected ? '#FFCDD2' : ''" [content]="item.content" [icon]="item.icon">
+      [color]="item.isSelected ? '#FFCDD2' : ''" [content]="item.content" [icon]="item.icon" [route]="item.route">
     </app-dashboard-entry>
   </mat-drawer>
 
   <mat-drawer-content>
-    <app-overview></app-overview>
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

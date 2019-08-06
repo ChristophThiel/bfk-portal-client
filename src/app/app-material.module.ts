@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -19,7 +22,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatChipsModule,
+    MatListModule
   ],
   exports: [
     MatToolbarModule,
@@ -28,7 +34,10 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatChipsModule,
+    MatListModule
   ]
 })
 export class AppMaterialModule { }

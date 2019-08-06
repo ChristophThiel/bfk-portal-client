@@ -1,24 +1,19 @@
-<!-- <mat-toolbar color="primary">
-  <div class="brand">BFK - Portal</div>
-</mat-toolbar>
-
-<div class="container">
-
-  <form fxLayout="column">
-    <mat-form-field appearance="standard">
-      <mat-label>E-Mail</mat-label>
-      <input matInput>
-    </mat-form-field>
-
-    <mat-form-field appearance="standard">
-      <mat-label>Passwort</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <a href="#">Passwort vergessen?</a>
-
-    <button mat-button color="primary" type="button">Anmelden</button>
-  </form>
-</div> -->
 <mat-toolbar color="primary">
-  Login
+  <div class="header">
+    <p class="headline">BFK - Portal</p>
+    <p class="subheadline">Verwaltung auf Bezirksebene</p>
+  </div>
 </mat-toolbar>
+<form fxLayout="column">
+  <mat-form-field appearance="outline">
+    <mat-label>E-Mail</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Passwort</mat-label>
+    <input matInput type="password">
+  </mat-form-field>
+  <button color="primary" mat-flat-button type="button">Anmelden</button>
+  <br />
+  <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
+</form>

@@ -21,4 +21,8 @@
 
 mat-tab-group {
   height: calc(100vh - 56px - 32px);
+
+  .mat-tab-body-wrapper {
+    height: 100vh !important;
+  }
 }

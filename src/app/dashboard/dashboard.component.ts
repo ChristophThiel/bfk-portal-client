@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,35 +7,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent {
 
+  public currentComponent: string;
   public items: any[] = [
     {
       content: 'Übersicht',
       icon: 'star',
-      isSelected: true
+      isSelected: true,
+      route: ''
     },
     {
       content: 'Kalendar',
       icon: 'perm_contact_calendar',
-      isSelected: false
+      isSelected: false,
+      route: '/scheduler'
     },
     {
       content: 'Marktplatz',
       icon: 'store',
-      isSelected: false
+      isSelected: false,
+      route: 'market'
     },
     {
       content: 'Dokumente',
       icon: 'folder',
-      isSelected: false
+      isSelected: false,
+      route: 'documents'
     },
     {
       content: 'Administration',
       icon: 'settings',
-      isSelected: false
+      isSelected: false,
+      route: 'settings'
     }
   ];
 
   constructor() { }
+
+  public onActivate(event: any): void {
+    switch (event.constructor.name) {
+      case 'OverviewComponent':
+        this.currentComponent = 'Übersicht';
+        break;
+      case 'SchedulerComponent':
+        this.currentComponent = 'Kalendar';
+        break;
+      case 'MarketComponent':
+        this.currentComponent = 'Marktplatz';
+        break;
+      case 'DocumentsComponent':
+        this.currentComponent = 'Dokumente';
+        break;
+    }
+  }
 
   public selectItem(select: any): void {
     this.items.forEach(item => item.isSelected = false);

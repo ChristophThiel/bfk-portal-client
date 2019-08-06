@@ -1,5 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
-
 mat-toolbar {
-  font-family: 'Baloo', cursive;
+
+  p {
+    margin: 0;
+  }
+
+  .header {
+    margin: auto;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 16pt;
+    font-weight: bolder;
+  }
+
+  .subheadline {
+    margin-top: -15px;
+    font-size: 10pt;
+  }
+}
+
+form {
+  margin: 12px;
 }
