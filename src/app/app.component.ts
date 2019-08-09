@@ -15,7 +15,7 @@ export class AppComponent {
   public currentComponent: any = null;
 
   constructor() {
-    this.currentComponent = this.components[0];
+    this.currentComponent = this.components[1];
   }
 
 

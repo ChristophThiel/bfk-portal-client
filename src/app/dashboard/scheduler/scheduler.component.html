@@ -1,1 +1,43 @@
-<p>calendar works!</p>
+<!-- <div class="calendar-container">
+  <div class="calendar-header" fxLayout="row">
+    <button mat-icon-button (click)="changeMonth(-1)">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <h1 fxFlex="80*">{{currentMonth}}</h1>
+    <button mat-icon-button (click)="changeMonth(1)">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+  <div class="calendar">
+    <span *ngFor="let dayName of dayNames" class="day-name">{{dayName[0]}}</span>
+    <div *ngFor="let day of days" class="day" [class.day--disabled]="day.isDisabled"
+      [class.day--today]="isToday(day.value)">
+      {{day.value}}
+    </div>
+    <section *ngFor="let item of positionedAppointments" class="task" [style.grid-row]="item.row"
+      [style.grid-column-start]="item.columnStart" [style.grid-column-end]="item.columnEnd" [style.align-self]="align">
+      {{item.appointment.title}}
+    </section>-->
+<!-- Use a layer over the grid to position the events 
+  </div>
+
+  <table class="overlay-panel" cellspacing="0" cellpadding="0">
+    <tr *ngFor="let row of overlayRows"></tr>
+  </table>
+
+  <table>
+    <tr>
+      <td colspan="2" style="background-color: blue;">Hello</td>
+      <td>Hello</td>
+      <td>Hello</td>
+    </tr>
+    <tr>
+      <td>Hello</td>
+      <td>Hello</td>
+      <td>Hello</td>
+      <td>Hello</td>
+    </tr>
+  </table>
+
+
+</div>-->

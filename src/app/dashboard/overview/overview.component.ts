@@ -12,5 +12,28 @@ export class OverviewComponent {
       name: 'test'
     }
   ];
+  public shifts: any[] = [
+    {
+      title: 'Nachmittagsdienst',
+      from: '13. August 2019'
+    },
+    {
+      title: 'Nachtdienst',
+      from: '14. August 2019'
+    }
+  ]
+
+  constructor() { }
+
+  public offer(shift: any): void {
+    shift.offered = true;
+  }
+
+  public offered(shift: any): string {
+    if (shift.offered) {
+      return '../../../assets/images/offered.svg';
+    }
+    return '';
+  }
 
 }

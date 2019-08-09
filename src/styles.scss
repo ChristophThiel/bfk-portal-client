@@ -1,6 +1,6 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 
-@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
 $custom-typography: mat-typography-config(
   $font-family: '"Comfortaa", cursive'
 );
@@ -15,14 +15,15 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
-@import './colors.scss';
+@import "./colors.scss";
 
-html, body { 
+html,
+body {
   height: 100%;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
 
-body { 
+body {
   margin: 0;
 }
 

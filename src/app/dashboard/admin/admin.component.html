@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-tab-group mat-stretch-tabs>
+    <mat-tab label="Benutzer" #user>
+      <mat-list role="list">
+        <mat-list-item>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>edit</mat-icon>
+              <span>Ändern</span>
+            </button>
+            <button mat-menu-item class="delete">
+              <mat-icon color="primary">delete</mat-icon>
+              <span>Löschen</span>
+            </button>
+          </mat-menu>
+          <h4 mat-line><b>Alexander Koblmüller</b></h4>
+          <p mat-line>UserBwst</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Diensteinteilung"></mat-tab>
+  </mat-tab-group>
+</div>
+<button *ngIf="user.isActive" mat-fab class="fab-button" color="primary">
+  <mat-icon>add</mat-icon>
+</button>

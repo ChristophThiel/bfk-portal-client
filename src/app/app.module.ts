@@ -13,6 +13,10 @@ import { SchedulerComponent } from './dashboard/scheduler/scheduler.component';
 import { MarketComponent } from './dashboard/market/market.component';
 import { MarketRequestComponent } from './dashboard/market/market-request/market-request.component';
 import { DocumentsComponent } from './dashboard/documents/documents.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
+
+import { DxSchedulerModule } from 'devextreme-angular';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
@@ -28,14 +32,16 @@ import { AppMaterialModule } from './app-material.module';
     SchedulerComponent,
     MarketComponent,
     MarketRequestComponent,
-    DocumentsComponent
+    DocumentsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    DxSchedulerModule
   ],
   entryComponents: [
     LoginComponent,

@@ -27,17 +27,17 @@ export class DashboardComponent {
       isSelected: false,
       route: 'market'
     },
-    {
+    /*{
       content: 'Dokumente',
       icon: 'folder',
       isSelected: false,
       route: 'documents'
-    },
+    },*/
     {
       content: 'Administration',
       icon: 'settings',
       isSelected: false,
-      route: 'settings'
+      route: 'admin'
     }
   ];
 
@@ -57,13 +57,17 @@ export class DashboardComponent {
       case 'DocumentsComponent':
         this.currentComponent = 'Dokumente';
         break;
+      case 'AdminComponent':
+        this.currentComponent = 'Administration';
+        break;
     }
   }
 
-  public selectItem(select: any): void {
+  public selectItem(select: any, sidenav: any): void {
     this.items.forEach(item => item.isSelected = false);
     const selected = this.items.filter(item => item.content === select.content);
     selected[0].isSelected = true;
+    sidenav.toggle();
   }
 
 }

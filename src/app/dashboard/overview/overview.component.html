@@ -1,13 +1,25 @@
-<div class="no-work" *ngIf="appointments.length === 0">
+<div class="no-work" *ngIf="appointments.length === 0 && shifts.length === 0">
   <mat-icon>work_off</mat-icon>
-  <p>Keine Aufgaben!</p>
+  <p>Keine Dienste oder Termine!</p>
 </div>
 
-<div class="container" *ngIf="appointments.length !== 0">
+<div class="container" *ngIf="appointments.length !== 0 || shifts.length !==0">
   <mat-tab-group mat-stretch-tabs>
-    <mat-tab label="Dienste">
-      <app-appointment></app-appointment>
+    <mat-tab label="Meine Dienste" *ngIf="shifts.length !== 0">
+      <mat-accordion [displayMode]="'flat'">
+        <mat-expansion-panel *ngFor="let shift of shifts">
+          <mat-expansion-panel-header [collapsedHeight]="'auto'">
+            <mat-panel-title>
+              <div>
+                <h3>{{shift.title}}</h3>
+                <h5>{{shift.from}}</h5>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-button color="primary" fxFlexFill (click)="offer(shift)">Anbieten</button>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-tab>
-    <mat-tab label="Termine"></mat-tab>
+    <mat-tab label="Termine" *ngIf="appointments.length !== 0"></mat-tab>
   </mat-tab-group>
 </div>

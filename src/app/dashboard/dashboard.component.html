@@ -6,8 +6,8 @@
 </mat-toolbar>
 
 <mat-drawer-container>
-  <mat-drawer #sidenav mode="over">
-    <app-dashboard-entry *ngFor="let item of items" (click)="selectItem(item)"
+  <mat-drawer #sidenav mode="over" autoFocus="false">
+    <app-dashboard-entry *ngFor="let item of items" (click)="selectItem(item, sidenav)"
       [color]="item.isSelected ? '#FFCDD2' : ''" [content]="item.content" [icon]="item.icon" [route]="item.route">
     </app-dashboard-entry>
   </mat-drawer>

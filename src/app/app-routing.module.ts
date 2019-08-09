@@ -4,12 +4,14 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SchedulerComponent } from './dashboard/scheduler/scheduler.component';
 import { MarketComponent } from './dashboard/market/market.component';
 import { DocumentsComponent } from './dashboard/documents/documents.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: OverviewComponent },
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'market', component: MarketComponent },
-  { path: 'documents', component: DocumentsComponent }
+  { path: 'documents', component: DocumentsComponent },
+  { path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({

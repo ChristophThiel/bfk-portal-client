@@ -1,4 +1,4 @@
-@import '../../../colors.scss';
+@import "../../../colors.scss";
 
 .no-work {
   text-align: center;
@@ -16,7 +16,6 @@
     margin-top: 0;
     color: rgba(0, 0, 0, 0.4);
   }
-
 }
 
 mat-tab-group {
@@ -24,5 +23,23 @@ mat-tab-group {
 
   .mat-tab-body-wrapper {
     height: 100vh !important;
+  }
+}
+
+mat-expansion-panel {
+  margin: 5px;
+  border-radius: 5px !important;
+
+  mat-expansion-panel-header {
+    margin: 16px 0;
+
+    h3 {
+      margin: 0;
+    }
+
+    h5 {
+      margin: 0;
+      font-weight: normal;
+    }
   }
 }
