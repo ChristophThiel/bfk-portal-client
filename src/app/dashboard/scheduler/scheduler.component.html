@@ -1,3 +1,30 @@
+<div class="scheduler" fxFlex="100" [fxFlex.gt-md]="'1247px'">
+  <div class="scheduler-navigator">
+    <button mat-icon-button (click)="changeMonth(-1)">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <h1 fxFlex="80*">{{navigatorText}}</h1>
+    <button mat-icon-button (click)="changeMonth(1)">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+
+  <dx-scheduler #scheduler currentView="month" [(currentDate)]="currentDate" firstDayOfWeek="1"
+    dateCellTemplate="dateCellTemplate" dataCellTemplate="dataCellTemplate" [dataSource]="appointments"
+    (onAppointmentClick)="cancelEvent($event)" (onAppointmentDblClick)="cancelEvent($event)"
+    (onCellClick)="cellClicked($event)" maxAppointmentsPerCell="unlimited">
+    <div *dxTemplate="let data of 'dateCellTemplate'">
+      <div class="name">{{['S', 'M', 'D', 'M', 'D', 'F', 'S'][data.date.getDay()]}}</div>
+    </div>
+    <div *dxTemplate="let data of 'dataCellTemplate'">
+      <div class="day-cell">{{data.startDate.getDate()}}</div>
+    </div>
+  </dx-scheduler>
+</div>
+<button mat-fab class="fab-button" color="primary">
+  <mat-icon>add</mat-icon>
+</button>
+
 <!-- <div class="calendar-container">
   <div class="calendar-header" fxLayout="row">
     <button mat-icon-button (click)="changeMonth(-1)">

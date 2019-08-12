@@ -4,4 +4,16 @@ mat-drawer-container {
   mat-drawer {
     width: 80vw;
   }
+
+  @media screen and (min-width: 1280px) {
+    mat-drawer {
+      width: 25vw;
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    mat-drawer {
+      width: 15vw;
+    }
+  }
 }

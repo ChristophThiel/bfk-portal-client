@@ -21,7 +21,36 @@
         </mat-list-item>
       </mat-list>
     </mat-tab>
-    <mat-tab label="Diensteinteilung"></mat-tab>
+
+    <mat-tab label="Diensteinteilung">
+      <form fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Monat auswählen</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let month of filteredMonths" [value]="month" fxLayout="row">
+              <div fxFlex>{{month.value}}</div>
+              <mat-icon fxFlexAlign="center">{{month.done ? 'done' : ''}}</mat-icon>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{getHeader()}}</mat-label>
+          <mat-select>
+            <mat-option>
+              Alexander Koblmüller
+            </mat-option>
+            <mat-option>
+              Christoph Zimprich
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="actions" fxLayout="row" fxLayoutGap="5%">
+          <button type="button" mat-button>Vorheriger Tag</button>
+          <button type="button" mat-button color="primary">Nächster Tag</button>
+        </div>
+      </form>
+    </mat-tab>
   </mat-tab-group>
 </div>
 <button *ngIf="user.isActive" mat-fab class="fab-button" color="primary">

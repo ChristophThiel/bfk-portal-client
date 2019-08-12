@@ -1,7 +1,2 @@
-<!-- <mat-toolbar color="primary">
-  <button mat-icon-button style="margin-right: 16px;">
-    <mat-icon>menu</mat-icon>
-  </button>
-  Login
-</mat-toolbar> -->
-<ng-container *ngComponentOutlet="currentComponent"></ng-container>
+<app-login *ngIf="!loggedIn" (loggedIn)="onLogIn($event)"></app-login>
+<app-dashboard *ngIf="loggedIn"></app-dashboard>

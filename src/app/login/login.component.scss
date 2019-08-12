@@ -1,25 +1,25 @@
-mat-toolbar {
+@import "../../colors.scss";
 
-  p {
-    margin: 0;
-  }
+mat-toolbar h1 {
+  margin: auto;
+}
 
-  .header {
-    margin: auto;
-    text-align: center;
-  }
+.container {
+  margin: 32px;
+  padding-top: calc((100vh - 56px - 64px) / 2);
+  transform: translateY(-25%);
+}
 
-  .headline {
-    font-size: 16pt;
-    font-weight: bolder;
-  }
-
-  .subheadline {
-    margin-top: -15px;
-    font-size: 10pt;
+.header {
+  img {
+    height: 80px;
   }
 }
 
-form {
-  margin: 12px;
+h2 {
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
 }

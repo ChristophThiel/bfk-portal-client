@@ -6,6 +6,10 @@ mat-tab-group {
   .mat-tab-body-wrapper {
     height: 100vh !important;
   }
+
+  form {
+    margin: 0 5px;
+  }
 }
 
 .delete {

@@ -1,19 +1,22 @@
 <mat-toolbar color="primary">
-  <div class="header">
-    <p class="headline">BFK - Portal</p>
-    <p class="subheadline">Verwaltung auf Bezirksebene</p>
-  </div>
+  <h1>BFK - Portal</h1>
 </mat-toolbar>
-<form fxLayout="column">
-  <mat-form-field appearance="outline">
-    <mat-label>E-Mail</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Passwort</mat-label>
-    <input matInput type="password">
-  </mat-form-field>
-  <button color="primary" mat-flat-button type="button">Anmelden</button>
-  <br />
-  <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
-</form>
+
+<div class="container" fxLayout="row" fxLayoutAlign="center">
+  <form fxLayout="column" fxFlex="100" [fxFlex.gt-xs]="'535px'">
+    <mat-form-field appearance="outline">
+      <mat-label>E-Mail</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Passwort</mat-label>
+      <input matInput type="{{visible ? 'text' : 'password'}}">
+      <button mat-icon-button matSuffix type="button" (click)="toggleVisibility()">
+        <mat-icon>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button color="primary" mat-flat-button type="button" (click)="login()">Anmelden</button>
+    <br />
+    <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
+  </form>
+</div>

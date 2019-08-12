@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor() { }
+  @Output()
+  public loggedIn = new EventEmitter<boolean>();
+
+  public visible: boolean;
+
+  constructor() {
+    this.visible = false;
+  }
+
+  public login(): void {
+    this.loggedIn.emit(true);
+  }
+
+  public toggleVisibility(): void {
+    this.visible = !this.visible;
+  }
 
 }

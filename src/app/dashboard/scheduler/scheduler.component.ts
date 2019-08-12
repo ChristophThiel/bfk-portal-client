@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DxSchedulerComponent } from 'devextreme-angular';
 
 const locale: string = 'de-AT';
 const dayNameOption = { weekday: 'long' };
@@ -11,6 +12,48 @@ const monthOption = { month: 'long' };
 })
 export class SchedulerComponent {
 
+  public currentDate: Date;
+  public selectedDate: Date;
+  public appointments: any[] = [
+    {
+      text: "Test 1",
+      startDate: new Date(2019, 7, 15, 9, 30),
+      endDate: new Date(2019, 7, 16, 11, 30)
+    },
+    {
+      text: "Test 1",
+      startDate: new Date(2019, 7, 15, 9, 30),
+      endDate: new Date(2019, 7, 16, 11, 30)
+    },
+    {
+      text: "Test 1",
+      startDate: new Date(2019, 7, 15, 9, 30),
+      endDate: new Date(2019, 7, 16, 11, 30)
+    }
+  ]
+
+  constructor() {
+    this.currentDate = new Date();
+  }
+
+  public get navigatorText(): string {
+    return this.currentDate.toLocaleDateString('de', { month: 'long', year: 'numeric' })
+  }
+
+  public cancelEvent(event: any) {
+    event.cancel = true;
+  }
+
+  public changeMonth(value: number): void {
+    const help = new Date(this.currentDate.getTime());
+    help.setMonth(help.getMonth() + value);
+    this.currentDate = new Date(help.getFullYear(), help.getMonth());
+  }
+
+  public cellClicked(event: any): void {
+    event.cancel = true;
+    this.selectedDate = event.cellData.startDate;
+  }
   /* public currentDate: Date;
   public dayNames: string[] = [
     'Montag',

@@ -3,8 +3,8 @@
   <p>Keine Dienste oder Termine!</p>
 </div>
 
-<div class="container" *ngIf="appointments.length !== 0 || shifts.length !==0">
-  <mat-tab-group mat-stretch-tabs>
+<div class="container" *ngIf="appointments.length !== 0 || shifts.length !==0" fxLayout="row" fxLayoutAlign="center">
+  <mat-tab-group mat-stretch-tabs fxFlex="100" [fxFlex.gt-md]="'1247px'">
     <mat-tab label="Meine Dienste" *ngIf="shifts.length !== 0">
       <mat-accordion [displayMode]="'flat'">
         <mat-expansion-panel *ngFor="let shift of shifts">

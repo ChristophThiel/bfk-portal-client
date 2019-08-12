@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +6,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 export class AppComponent {
 
-  private components: any = [
-    LoginComponent,
-    DashboardComponent
-  ];
-  public currentComponent: any = null;
+  public loggedIn: boolean = false;
 
-  constructor() {
-    this.currentComponent = this.components[1];
+  constructor() { }
+
+  public onLogIn(event: boolean) {
+    this.loggedIn = event;
   }
-
 
 }
