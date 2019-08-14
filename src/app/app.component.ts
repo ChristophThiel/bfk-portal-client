@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public loggedIn: boolean = false;
+  public loggedIn: boolean = true;
 
   constructor() { }
 

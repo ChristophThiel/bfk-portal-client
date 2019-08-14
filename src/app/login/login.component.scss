@@ -1,3 +1,4 @@
+@import "../../styles.scss";
 @import "../../colors.scss";
 
 mat-toolbar h1 {
@@ -5,21 +6,58 @@ mat-toolbar h1 {
 }
 
 .container {
-  margin: 32px;
-  padding-top: calc((100vh - 56px - 64px) / 2);
-  transform: translateY(-25%);
+  max-width: 414px;
+  padding: 0 32px;
+  margin: auto;
+  transform: translateY(calc((100vh - 100% - 32px) / 2));
+}
+
+// iPad
+@media screen and (min-width: $xs) {
+  .container {
+    width: 35vw;
+    height: 60vh;
+    margin: 0 calc(32.5vw - 16px) !important;
+    transform: translateY(calc(100vh - 100%) / 2);
+
+    .container-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+// iPad Pro
+@media screen and (min-width: $sm) {
+  .container {
+    width: 30vw;
+    height: 50vh;
+    margin: 0 calc(35vw - 16px) !important;
+    transform: translateY(calc(100vh - 100%) / 2);
+
+    .container-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-60%);
+    }
+  }
+}
+
+@media screen and (min-width: $md) {
+  .container {
+    max-width: 372px;
+    margin: 0 calc((100vw - 372px - 64px) / 2) !important;
+    transform: translateY(calc(100vh - 100%) / 2);
+  }
 }
 
 .header {
   img {
-    height: 80px;
+    width: 125px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
   }
-}
-
-h2 {
-  margin: 0;
-}
-
-h6 {
-  margin: 0;
 }

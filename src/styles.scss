@@ -15,6 +15,12 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 @include angular-material-theme($theme);
 
+$xs: 600px;
+$sm: 960px;
+$md: 1280px;
+$lg: 1920px;
+$xl: 5000px;
+
 @import "./colors.scss";
 
 html,
@@ -25,6 +31,7 @@ body {
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 a {
@@ -38,4 +45,20 @@ mat-toolbar button {
 
 .container {
   margin: 16px;
+}
+
+// iPad
+@media screen and (min-width: $xs) {
+  .container {
+    width: 70vw;
+    margin: 16px 15vw;
+  }
+}
+
+// iPad Pro
+@media screen and (min-width: $sm) {
+  .container {
+    width: 60vw;
+    margin: 16px 20vw;
+  }
 }

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -11,7 +12,6 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 import { AppointmentComponent } from './dashboard/appointment/appointment.component';
 import { SchedulerComponent } from './dashboard/scheduler/scheduler.component';
 import { MarketComponent } from './dashboard/market/market.component';
-import { MarketRequestComponent } from './dashboard/market/market-request/market-request.component';
 import { DocumentsComponent } from './dashboard/documents/documents.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 
@@ -31,13 +31,13 @@ import { AppMaterialModule } from './app-material.module';
     AppointmentComponent,
     SchedulerComponent,
     MarketComponent,
-    MarketRequestComponent,
     DocumentsComponent,
     AdminComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     AppRoutingModule,
     AppMaterialModule,

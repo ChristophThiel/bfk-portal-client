@@ -1,22 +1,55 @@
-<mat-toolbar color="primary">
-  <h1>BFK - Portal</h1>
-</mat-toolbar>
+<div class="container" fxHide fxShow.xs>
+  <div class="header">
+    <img src="../../assets/images/wl-map.png">
+  </div>
 
-<div class="container" fxLayout="row" fxLayoutAlign="center">
-  <form fxLayout="column" fxFlex="100" [fxFlex.gt-xs]="'535px'">
+  <form fxLayout="column" [formGroup]="formGroup">
     <mat-form-field appearance="outline">
       <mat-label>E-Mail</mat-label>
-      <input matInput>
+      <input formControlName="email" matInput />
+      <mat-error *ngIf="formGroup.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
     </mat-form-field>
+
     <mat-form-field appearance="outline">
       <mat-label>Passwort</mat-label>
-      <input matInput type="{{visible ? 'text' : 'password'}}">
+      <input formControlName="password" matInput type="{{visible ? 'text' : 'password'}}">
       <button mat-icon-button matSuffix type="button" (click)="toggleVisibility()">
         <mat-icon>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
       </button>
+      <mat-error *ngIf="formGroup.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
     </mat-form-field>
+    <br />
     <button color="primary" mat-flat-button type="button" (click)="login()">Anmelden</button>
     <br />
     <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
   </form>
 </div>
+
+<mat-card class="container" fxShow fxHide.xs>
+  <div class="container-content">
+    <div class="header">
+      <img src="../../assets/images/wl-map.png">
+    </div>
+
+    <form fxLayout="column" [formGroup]="formGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>E-Mail</mat-label>
+        <input formControlName="email" matInput />
+        <mat-error *ngIf="formGroup.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Passwort</mat-label>
+        <input formControlName="password" matInput type="{{visible ? 'text' : 'password'}}">
+        <button mat-icon-button matSuffix type="button" (click)="toggleVisibility()">
+          <mat-icon>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="formGroup.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+      <br />
+      <button color="primary" mat-flat-button type="button" (click)="login()">Anmelden</button>
+      <br />
+      <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
+    </form>
+  </div>
+</mat-card>
