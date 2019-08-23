@@ -1,6 +1,7 @@
-<div class="container" fxHide fxShow.xs>
+<div class="container">
   <div class="header">
     <img src="../../assets/images/wl-map.png">
+    <h2>BFK - Portal</h2>
   </div>
 
   <form fxLayout="column" [formGroup]="formGroup">
@@ -19,13 +20,13 @@
       <mat-error *ngIf="formGroup.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
     </mat-form-field>
     <br />
-    <button color="primary" mat-flat-button type="button" (click)="login()">Anmelden</button>
+    <a color="primary" mat-flat-button routerLink="/overview" type="button" (click)="login()">Anmelden</a>
     <br />
-    <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
+    <a color="primary" mat-button routerLink="/reset" type="button" (click)="reset()">Passwort zurücksetzen</a>
   </form>
 </div>
 
-<mat-card class="container" fxShow fxHide.xs>
+<!-- <mat-card class="container" fxShow fxHide.xs>
   <div class="container-content">
     <div class="header">
       <img src="../../assets/images/wl-map.png">
@@ -52,4 +53,4 @@
       <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
     </form>
   </div>
-</mat-card>
+</mat-card> -->

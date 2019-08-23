@@ -1,18 +1,31 @@
 @import "../../styles.scss";
 @import "../../colors.scss";
 
-mat-toolbar h1 {
-  margin: auto;
-}
-
 .container {
-  max-width: 414px;
+  max-width: 420px;
   padding: 0 32px;
   margin: auto;
-  transform: translateY(calc((100vh - 100% - 32px) / 2));
+  transform: translateY(calc((100vh - 100%) / 2));
+
+  .header {
+    img {
+      width: 100px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: 22pt;
+      text-align: center;
+      color: $primary;
+    }
+  }
 }
 
-// iPad
+/* // iPad
 @media screen and (min-width: $xs) {
   .container {
     width: 35vw;
@@ -50,14 +63,4 @@ mat-toolbar h1 {
     margin: 0 calc((100vw - 372px - 64px) / 2) !important;
     transform: translateY(calc(100vh - 100%) / 2);
   }
-}
-
-.header {
-  img {
-    width: 125px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 32px;
-  }
-}
+} */

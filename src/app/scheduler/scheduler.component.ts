@@ -12,6 +12,39 @@ const monthOption = { month: 'long' };
 })
 export class SchedulerComponent {
 
+  public items: any[] = [
+    {
+      content: 'Übersicht',
+      icon: 'star',
+      isSelected: false,
+      route: '/overview'
+    },
+    {
+      content: 'Kalendar',
+      icon: 'perm_contact_calendar',
+      isSelected: true,
+      route: '/scheduler'
+    },
+    {
+      content: 'Marktplatz',
+      icon: 'store',
+      isSelected: false,
+      route: '/market'
+    },
+    /*{
+      content: 'Dokumente',
+      icon: 'folder',
+      isSelected: false,
+      route: 'documents'
+    },*/
+    {
+      content: 'Administration',
+      icon: 'settings',
+      isSelected: false,
+      route: '/admin'
+    }
+  ];
+
   public currentDate: Date;
   public selectedDate: Date;
   public appointments: any[] = [

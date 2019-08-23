@@ -12,6 +12,9 @@ export class LoginComponent {
   @Output()
   public loggedIn = new EventEmitter<boolean>();
 
+  @Output()
+  public resetPassword = new EventEmitter<boolean>();
+
   public formGroup: FormGroup;
   public visible: boolean;
 
@@ -33,6 +36,10 @@ export class LoginComponent {
 
   public login(): void {
     this.loggedIn.emit(true);
+  }
+
+  public reset(): void {
+    this.resetPassword.emit(true);
   }
 
   public toggleVisibility(): void {

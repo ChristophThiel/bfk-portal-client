@@ -8,6 +8,38 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class AdminComponent {
 
+  public items: any[] = [
+    {
+      content: 'Übersicht',
+      icon: 'star',
+      isSelected: false,
+      route: '/overview'
+    },
+    {
+      content: 'Kalendar',
+      icon: 'perm_contact_calendar',
+      isSelected: false,
+      route: '/scheduler'
+    },
+    {
+      content: 'Marktplatz',
+      icon: 'store',
+      isSelected: false,
+      route: '/market'
+    },
+    /*{
+      content: 'Dokumente',
+      icon: 'folder',
+      isSelected: false,
+      route: 'documents'
+    },*/
+    {
+      content: 'Administration',
+      icon: 'settings',
+      isSelected: true,
+      route: '/admin'
+    }
+  ];
   public formGroup: FormGroup;
   public currentDate: Date;
   public filteredMonths: any[];

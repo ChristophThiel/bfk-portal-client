@@ -1,0 +1,157 @@
+@import "../../styles.scss";
+@import "../../colors.scss";
+
+mat-drawer-container {
+  height: calc(100vh - 56px);
+
+  mat-drawer {
+    width: 80vw;
+  }
+
+  @media screen and (min-width: $xs) {
+    mat-drawer {
+      width: 40vw;
+    }
+  }
+
+  @media screen and (min-width: $sm) {
+    mat-drawer {
+      width: 30vw;
+    }
+  }
+
+  @media screen and (min-width: $md) {
+    mat-drawer {
+      max-width: 308px;
+    }
+  }
+
+  mat-drawer-content {
+    overflow: hidden;
+  }
+}
+
+.scheduler {
+  .scheduler-navigator {
+    text-align: center;
+    margin: 8px 16px;
+
+    h1 {
+      font-size: 12pt;
+    }
+  }
+
+  .scheduler-header {
+    font-size: 12pt;
+  }
+
+  // iPad
+  @media screen and (min-width: $xs) {
+    .scheduler-container {
+      width: 70vw;
+      margin: 16px 15vw;
+    }
+  }
+
+  dx-scheduler {
+    margin-top: 64px;
+    height: calc(100vh - 56px - 56px);
+    max-height: calc(100vh - 56px - 56px);
+
+    ::ng-deep {
+      .dx-scheduler-header {
+        display: none;
+      }
+
+      .dx-scheduler-work-space {
+        padding-top: 0;
+        background-color: white !important;
+        box-shadow: inset 0 0 0 0 rgba(221, 221, 221, 0.6) !important;
+      }
+
+      .dx-scheduler-date-table-scrollable,
+      .dx-scrollable,
+      .dx-visibility-change-handler,
+      .dx-scrollable-vertical,
+      .dx-scrollable-simulated {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .name,
+      .dx-scheduler-date-table-cell {
+        font-family: "Comfortaa", cursive;
+        text-align: center;
+      }
+
+      .dx-template-wrapper {
+        padding-right: 0;
+      }
+
+      .dx-state-focused {
+        background-color: $primary-select;
+        box-shadow: inset 0 0 0 1px $primary;
+      }
+
+      .dx-scheduler-focused-cell {
+        color: black;
+        font-weight: bold;
+      }
+
+      .dx-scheduler-date-table-other-month {
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9f9fa' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .dx-scheduler-appointment {
+        box-shadow: inset 2px 0 0 0 $primary;
+        background-color: $primary;
+      }
+    }
+  }
+  // iPad
+  @media screen and (min-width: $xs) {
+    dx-scheduler {
+      height: 70vh;
+
+      ::ng-deep {
+        .dx-scheduler-appointment-title {
+          font-size: 14pt;
+        }
+      }
+    }
+  }
+
+  // iPad Pro
+  @media screen and (min-width: $sm) {
+    dx-scheduler {
+      height: 70vh;
+
+      ::ng-deep {
+        .dx-scheduler-appointment-title {
+          font-size: 16pt;
+        }
+      }
+    }
+  }
+
+  // Desktop
+  @media screen and (min-width: $md) {
+    dx-scheduler {
+      height: 60vh;
+
+      ::ng-deep {
+        .dx-scheduler-appointment-title {
+          font-size: 16pt;
+        }
+      }
+    }
+  }
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  backface-visibility: hidden;
+}

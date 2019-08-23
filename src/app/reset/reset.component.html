@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <a mat-icon-button routerLink="">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </a>
+</mat-toolbar>
+
+<div class="container">
+  <mat-horizontal-stepper linear="true">
+    <mat-step label="E-Mail eingeben" [stepControl]="formGroup.get('email')">
+      <div class="center">
+        <form fxLayout="column" [formGroup]="formGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>E-Mail</mat-label>
+            <input formControlName="email" matInput />
+            <mat-error *ngIf="formGroup.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+          </mat-form-field>
+          <br />
+          <button color="primary" mat-flat-button matStepperNext>Zurücksetzen</button>
+        </form>
+
+      </div>
+    </mat-step>
+    <mat-step label="Nächste Schritte">
+      <p>Es wird dir nun an <b>christoph.thiel@liwest.at</b> eine E-Mail geschickt, welche dir die nächsten Schritte
+        zeigt, wie du dein Passwort
+        zurücksetzen kannst.</p>
+      <p>Bei Fragen oder Problemen, wende dich an einen Admin.</p>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

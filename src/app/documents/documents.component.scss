@@ -1,8 +1,8 @@
-@import "../../../colors.scss";
+@import "../../colors.scss";
 
 mat-list {
   padding-top: 0;
-  
+
   mat-list-item:hover {
     background-color: $primary-select;
     color: $primary;

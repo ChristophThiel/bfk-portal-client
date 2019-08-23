@@ -4,19 +4,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+// Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardEntryComponent } from './dashboard/dashboard-entry/dashboard-entry.component';
-import { OverviewComponent } from './dashboard/overview/overview.component';
-import { AppointmentComponent } from './dashboard/appointment/appointment.component';
-import { SchedulerComponent } from './dashboard/scheduler/scheduler.component';
-import { MarketComponent } from './dashboard/market/market.component';
-import { DocumentsComponent } from './dashboard/documents/documents.component';
-import { AdminComponent } from './dashboard/admin/admin.component';
+import { ResetComponent } from './reset/reset.component';
+import { DashboardEntryComponent } from './dashboard-entry/dashboard-entry.component';
+import { OverviewComponent } from './overview/overview.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+import { MarketComponent } from './market/market.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { AdminComponent } from './admin/admin.component';
+
+// Dialogs
+import { ConfirmationDialog } from './dialogs/confirmation/confirmation.dialog';
 
 import { DxSchedulerModule } from 'devextreme-angular';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
@@ -25,14 +27,14 @@ import { AppMaterialModule } from './app-material.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
+    ResetComponent,
     DashboardEntryComponent,
     OverviewComponent,
-    AppointmentComponent,
     SchedulerComponent,
     MarketComponent,
     DocumentsComponent,
-    AdminComponent
+    AdminComponent,
+    ConfirmationDialog
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { AppMaterialModule } from './app-material.module';
   ],
   entryComponents: [
     LoginComponent,
-    DashboardComponent
+    ConfirmationDialog
   ],
   providers: [],
   bootstrap: [AppComponent]
