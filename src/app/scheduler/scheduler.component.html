@@ -32,7 +32,7 @@
         <dx-scheduler #scheduler currentView="month" [(currentDate)]="currentDate" firstDayOfWeek="1"
           dateCellTemplate="dateCellTemplate" dataCellTemplate="dataCellTemplate" [dataSource]="appointments"
           (onAppointmentClick)="cancelEvent($event)" (onAppointmentDblClick)="cancelEvent($event)"
-          (onCellClick)="cellClicked($event)" maxAppointmentsPerCell="unlimited">
+          (onCellClick)="cellClicked($event)" maxAppointmentsPerCell="3">
           <div *dxTemplate="let data of 'dateCellTemplate'" class="scheduler-header">
             <div class="name" fxHide fxShow.xs fxShow.sm>
               {{['S', 'M', 'D', 'M', 'D', 'F', 'S'][data.date.getDay()]}}
@@ -53,7 +53,7 @@
         </dx-scheduler>
       </div>
     </div>
-    <button mat-fab class="fab-button" color="primary">
+    <button fxHide fxShow.xs color="primary" mat-fab class="fab-button" (click)="createAppointment()">
       <mat-icon>add</mat-icon>
     </button>
   </mat-drawer-content>

@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [],
@@ -37,7 +38,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatStepperModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule
   ],
   exports: [
     MatToolbarModule,
@@ -55,7 +57,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatStepperModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule
   ]
 })
 export class AppMaterialModule { }

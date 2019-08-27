@@ -62,3 +62,40 @@ mat-toolbar button {
     margin: 16px 20vw;
   }
 }
+
+.full-dialog-container .mat-dialog-container {
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+// iPad
+@media screen and (min-width: $xs) {
+  .full-dialog-container .mat-dialog-container {
+    width: 50vw !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+// iPad Pro
+@media screen and (min-width: $sm) {
+  .full-dialog-container .mat-dialog-container {
+    width: 45vw !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+// Desktop
+@media screen and (min-width: $md) {
+  .full-dialog-container .mat-dialog-container {
+    width: 30vw !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+}

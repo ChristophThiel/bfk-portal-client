@@ -17,6 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 
 // Dialogs
 import { ConfirmationDialog } from './dialogs/confirmation/confirmation.dialog';
+import { AppointmentDialog } from './dialogs/appointment/appointment.dialog';
 
 import { DxSchedulerModule } from 'devextreme-angular';
 
@@ -34,7 +35,8 @@ import { AppMaterialModule } from './app-material.module';
     MarketComponent,
     DocumentsComponent,
     AdminComponent,
-    ConfirmationDialog
+    ConfirmationDialog,
+    AppointmentDialog
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { AppMaterialModule } from './app-material.module';
   ],
   entryComponents: [
     LoginComponent,
-    ConfirmationDialog
+    ConfirmationDialog,
+    AppointmentDialog
   ],
   providers: [],
   bootstrap: [AppComponent]
