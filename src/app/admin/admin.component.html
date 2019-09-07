@@ -30,7 +30,7 @@
                   <mat-icon>edit</mat-icon>
                   <span>Ändern</span>
                 </button>
-                <button mat-menu-item class="delete">
+                <button mat-menu-item class="delete" (click)="delete()">
                   <mat-icon color="primary">delete</mat-icon>
                   <span>Löschen</span>
                 </button>
@@ -45,43 +45,9 @@
             </mat-list-item>
           </mat-list>
         </mat-tab>
-
-        <mat-tab label="Diensteinteilung">
-          <div class="scheduler" fxFlex="100">
-            <div class="scheduler-navigator">
-              <button mat-icon-button (click)="changeMonth(-1)">
-                <mat-icon>keyboard_arrow_left</mat-icon>
-              </button>
-              <h1 fxFlex="80*">{{navigatorText}}</h1>
-              <button mat-icon-button (click)="changeMonth(1)">
-                <mat-icon>keyboard_arrow_right</mat-icon>
-              </button>
-            </div>
-
-            <dx-scheduler #scheduler currentView="month" [(currentDate)]="currentDate" firstDayOfWeek="1"
-              dateCellTemplate="dateCellTemplate" dataCellTemplate="dataCellTemplate" [dataSource]="appointments"
-              (onAppointmentClick)="cancelEvent($event)" (onAppointmentDblClick)="cancelEvent($event)"
-              (onCellClick)="cellClicked($event)" maxAppointmentsPerCell="unlimited">
-              <div *dxTemplate="let data of 'dateCellTemplate'" class="scheduler-header">
-                <div class="name" fxHide fxShow.xs fxShow.sm>
-                  {{['S', 'M', 'D', 'M', 'D', 'F', 'S'][data.date.getDay()]}}
-                </div>
-                <div class="name" fxHide fxShow.md>
-                  {{['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam'][data.date.getDay()]}}
-                </div>
-                <div class="name" fxHide fxShow.lg fxShow.xl>
-                  {{['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'][data.date.getDay()]}}
-                </div>
-              </div>
-              <div *dxTemplate="let data of 'dataCellTemplate'">
-                <div class="day-cell">{{data.startDate.getDate()}}</div>
-              </div>
-            </dx-scheduler>
-          </div>
-        </mat-tab>
       </mat-tab-group>
     </div>
-    <button *ngIf="user.isActive" mat-fab class="fab-button" color="primary" fxHide fxShow.xs>
+    <button fxHide fxShow.xs color="primary" mat-fab class="fab-button" (click)="details()">
       <mat-icon>add</mat-icon>
     </button>
   </mat-drawer-content>

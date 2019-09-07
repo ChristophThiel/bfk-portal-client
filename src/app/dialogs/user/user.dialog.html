@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+  Benutzer erstellen
+</mat-toolbar>
+
+<div class="dialog-container">
+  <form fxLayout="column" [formGroup]="formGroup" (ngSubmit)="create()">
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>Vorname</mat-label>
+      <input formControlName="firstname" matInput />
+      <mat-error *ngIf="formGroup.get('firstname').invalid">{{getErrorMessage('firstname')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>Nachname</mat-label>
+      <input formControlName="lastname" matInput />
+      <mat-error *ngIf="formGroup.get('lastname').invalid">{{getErrorMessage('lastname')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>E-Mail</mat-label>
+      <input formControlName="email" matInput />
+      <mat-error *ngIf="formGroup.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+    </mat-form-field>
+    <button color="primary" mat-button type="submit">Erstellen</button>
+  </form>
+</div>

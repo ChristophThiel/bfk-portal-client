@@ -65,10 +65,6 @@ export class OverviewComponent {
   public offer(shift: any) {
     const dialogRef = this.dialog.open(ConfirmationDialog, {
       width: '80vw',
-      data: {
-        title: shift.title,
-        from: shift.from
-      },
       disableClose: true
     });
 

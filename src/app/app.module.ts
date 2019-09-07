@@ -18,11 +18,13 @@ import { AdminComponent } from './admin/admin.component';
 // Dialogs
 import { ConfirmationDialog } from './dialogs/confirmation/confirmation.dialog';
 import { AppointmentDialog } from './dialogs/appointment/appointment.dialog';
+import { SwapDialog } from './dialogs/swap/swap.dialog';
 
 import { DxSchedulerModule } from 'devextreme-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-material.module';
+import { UserDialog } from './dialogs/user/user.dialog';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AppMaterialModule } from './app-material.module';
     DocumentsComponent,
     AdminComponent,
     ConfirmationDialog,
-    AppointmentDialog
+    AppointmentDialog,
+    SwapDialog,
+    UserDialog
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { AppMaterialModule } from './app-material.module';
   entryComponents: [
     LoginComponent,
     ConfirmationDialog,
-    AppointmentDialog
+    AppointmentDialog,
+    SwapDialog,
+    UserDialog
   ],
   providers: [],
   bootstrap: [AppComponent]

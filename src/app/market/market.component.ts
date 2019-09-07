@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialog } from '../dialogs/confirmation/confirmation.dialog';
+import { SwapDialog } from '../dialogs/swap/swap.dialog';
 
 @Component({
   selector: 'app-market',
@@ -57,6 +60,33 @@ export class MarketComponent {
     }
   ]
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  public take(shift: any) {
+    const dialogRef = this.dialog.open(ConfirmationDialog, {
+      width: '80vw',
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  public swap(shift: any) {
+    const dialogRef = this.dialog.open(SwapDialog, {
+      maxWidth: '100vw',
+      disableClose: false,
+      panelClass: 'full-dialog-container',
+      autoFocus: false,
+      data: {
+        title: shift.title,
+        from: shift.from,
+        user: shift.user
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 
 }

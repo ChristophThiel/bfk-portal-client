@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+  Termin tauschen
+</mat-toolbar>
+
+<div class="dialog-container">
+  <form fxLayout="column" [formGroup]="formGroup" (ngSubmit)="send()">
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>Typ</mat-label>
+      <input matInput readonly [value]="data.title" />
+    </mat-form-field>
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>Datum</mat-label>
+      <input matInput readonly [value]="data.from" />
+    </mat-form-field>
+    <mat-form-field fxFlex appearance="outline">
+      <mat-label>Benutzer</mat-label>
+      <input matInput readonly [value]="data.user" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex>
+      <mat-label>Dienst zum Tauschen</mat-label>
+      <mat-select formControlName="other">
+        <mat-option value="Tagdienst 15. September 2019">Tagdienst 15. September 2019</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button color="primary" mat-button type="submit">Senden</button>
+  </form>
+</div>
