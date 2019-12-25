@@ -20,37 +20,8 @@
       <mat-error *ngIf="formGroup.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
     </mat-form-field>
     <br />
-    <a color="primary" mat-flat-button routerLink="/overview" type="button" (click)="login()">Anmelden</a>
+    <a color="primary" mat-flat-button routerLink="/dashboard" type="button" (click)="login()">Anmelden</a>
     <br />
     <a color="primary" mat-button routerLink="/reset" type="button" (click)="reset()">Passwort zurücksetzen</a>
   </form>
 </div>
-
-<!-- <mat-card class="container" fxShow fxHide.xs>
-  <div class="container-content">
-    <div class="header">
-      <img src="../../assets/images/wl-map.png">
-    </div>
-
-    <form fxLayout="column" [formGroup]="formGroup">
-      <mat-form-field appearance="outline">
-        <mat-label>E-Mail</mat-label>
-        <input formControlName="email" matInput />
-        <mat-error *ngIf="formGroup.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Passwort</mat-label>
-        <input formControlName="password" matInput type="{{visible ? 'text' : 'password'}}">
-        <button mat-icon-button matSuffix type="button" (click)="toggleVisibility()">
-          <mat-icon>{{visible ? 'visibility' : 'visibility_off'}}</mat-icon>
-        </button>
-        <mat-error *ngIf="formGroup.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
-      </mat-form-field>
-      <br />
-      <button color="primary" mat-flat-button type="button" (click)="login()">Anmelden</button>
-      <br />
-      <button color="primary" mat-button type="button">Passwort zurücksetzen</button>
-    </form>
-  </div>
-</mat-card> -->

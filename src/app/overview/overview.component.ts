@@ -9,38 +9,6 @@ import { ConfirmationDialog } from '../dialogs/confirmation/confirmation.dialog'
 })
 export class OverviewComponent {
 
-  public items: any[] = [
-    {
-      content: 'Übersicht',
-      icon: 'star',
-      isSelected: true,
-      route: '/overview'
-    },
-    {
-      content: 'Kalendar',
-      icon: 'perm_contact_calendar',
-      isSelected: false,
-      route: '/scheduler'
-    },
-    {
-      content: 'Marktplatz',
-      icon: 'store',
-      isSelected: false,
-      route: '/market'
-    },
-    /*{
-      content: 'Dokumente',
-      icon: 'folder',
-      isSelected: false,
-      route: 'documents'
-    },*/
-    {
-      content: 'Administration',
-      icon: 'settings',
-      isSelected: false,
-      route: '/admin'
-    }
-  ];
   public appointments: any[] = [
     {
       title: 'Vollversammlung Marchtrenk',
@@ -50,12 +18,12 @@ export class OverviewComponent {
   public shifts: any[] = [
     {
       title: 'Nachmittagsdienst',
-      from: '13. August 2019',
+      from: 'Donnerstag, 13. Dezember 2019',
       offered: false
     },
     {
       title: 'Nachtdienst',
-      from: '14. August 2019',
+      from: 'Mittwoch, 14. August 2019',
       offered: false
     }
   ]

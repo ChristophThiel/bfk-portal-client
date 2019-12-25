@@ -1,0 +1,37 @@
+@import "../../styles.scss";
+
+mat-drawer-container {
+    height: calc(100vh - 56px);
+  
+    mat-drawer {
+      width: 80vw;
+    }
+  
+    @media screen and (min-width: $xs) {
+      mat-drawer {
+        width: 40vw;
+      }
+    }
+  
+    @media screen and (min-width: $sm) {
+      mat-drawer {
+        width: 30vw;
+      }
+    }
+  
+    @media screen and (min-width: $md) {
+      mat-drawer {
+        max-width: 308px;
+      }
+    }
+}
+
+.item {
+    width: calc(100% - 16px);
+    margin: 8px;
+    padding: 0;
+  
+    mat-icon {
+      margin: -2px 8px 0px 8px;
+    }
+  }

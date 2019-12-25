@@ -46,17 +46,20 @@ export class MarketComponent {
     {
       title: 'Nachmittagsdienst',
       from: '13. August 2019',
-      user: 'Roland Pöttinger-Kloimstein'
+      user: 'Roland Pöttinger-Kloimstein',
+      phone: '+43 664 3203606'
     },
     {
       title: 'Nachtdienst',
       from: '14. August 2019',
-      user: 'Alexander Koblmüller'
+      user: 'Alexander Koblmüller',
+      phone: '+43 664 3203606'
     },
     {
       title: 'Freier Dienst',
       from: '24. Dezember 2019',
-      user: ''
+      user: '',
+      phone: ''
     }
   ]
 

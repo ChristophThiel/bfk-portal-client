@@ -31,6 +31,7 @@
                   </div>
                 </mat-panel-title>
               </mat-expansion-panel-header>
+              <button fxFlexFill mat-button *ngIf="shift.phone.length !== 0">{{shift.phone}}</button>
               <div fxLayout="row" fxLayoutGap="5%">
                 <button mat-button *ngIf="shift.user.length !== 0" color="primary" fxFlex
                   (click)="swap(shift)">Tauschen</button>

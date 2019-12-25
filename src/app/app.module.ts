@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetComponent } from './reset/reset.component';
 import { DashboardEntryComponent } from './dashboard-entry/dashboard-entry.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -30,6 +31,7 @@ import { UserDialog } from './dialogs/user/user.dialog';
   declarations: [
     AppComponent,
     LoginComponent,
+    DashboardComponent,
     ResetComponent,
     DashboardEntryComponent,
     OverviewComponent,

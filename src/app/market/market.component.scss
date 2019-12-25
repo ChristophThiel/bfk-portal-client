@@ -1,31 +1,5 @@
 @import "../../styles.scss";
 
-mat-drawer-container {
-  height: calc(100vh - 56px);
-
-  mat-drawer {
-    width: 80vw;
-  }
-
-  @media screen and (min-width: $xs) {
-    mat-drawer {
-      width: 40vw;
-    }
-  }
-
-  @media screen and (min-width: $sm) {
-    mat-drawer {
-      width: 30vw;
-    }
-  }
-
-  @media screen and (min-width: $md) {
-    mat-drawer {
-      max-width: 308px;
-    }
-  }
-}
-
 mat-tab-group {
   height: calc(100vh - 56px - 32px);
 

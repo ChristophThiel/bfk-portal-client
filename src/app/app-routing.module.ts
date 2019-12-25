@@ -7,15 +7,20 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
 import { MarketComponent } from './market/market.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { AdminComponent } from './admin/admin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, data: { animation: 'isLeft' } },
   { path: 'reset', component: ResetComponent, data: { animation: 'isRight' } },
-  { path: 'overview', component: OverviewComponent, data: { animation: 'isRight' } },
-  { path: 'scheduler', component: SchedulerComponent, data: { animation: 'isRight' } },
-  { path: 'market', component: MarketComponent, data: { animation: 'isRight' } },
-  { path: 'documents', component: DocumentsComponent, data: { animation: 'isRight' } },
-  { path: 'admin', component: AdminComponent, data: { animation: 'isRight' } }
+  {
+    path: 'dashboard', component: DashboardComponent, data: { animation: 'isRight' }, children: [
+      { path: 'overview', component: OverviewComponent, data: { animation: 'isRight' } },
+      { path: 'scheduler', component: SchedulerComponent, data: { animation: 'isRight' } },
+      { path: 'market', component: MarketComponent, data: { animation: 'isRight' } },
+      { path: 'documents', component: DocumentsComponent, data: { animation: 'isRight' } },
+      { path: 'admin', component: AdminComponent, data: { animation: 'isRight' } }
+    ]
+  },
 ];
 
 @NgModule({
