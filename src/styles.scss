@@ -43,6 +43,17 @@ mat-toolbar button {
   margin-right: 16px !important;
 }
 
+.truncate {
+  flex: 1;
+  min-width: 0;
+
+  h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .container {
   margin: 16px;
 }

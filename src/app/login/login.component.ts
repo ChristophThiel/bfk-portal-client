@@ -1,6 +1,8 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Errors } from '../core/errors';
+import { AuthenticationService } from '../core/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +11,10 @@ import { Errors } from '../core/errors';
 })
 export class LoginComponent {
 
-  @Output()
-  public loggedIn = new EventEmitter<boolean>();
-
-  @Output()
-  public resetPassword = new EventEmitter<boolean>();
-
   public formGroup: FormGroup;
   public visible: boolean;
 
-  constructor(private builder: FormBuilder) {
+  constructor(private builder: FormBuilder, private router: Router, private authentication: AuthenticationService) {
     this.visible = false;
     this.formGroup = builder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -35,11 +31,16 @@ export class LoginComponent {
   }
 
   public login(): void {
-    this.loggedIn.emit(true);
+    if (this.formGroup.invalid)
+      return;
+
+    this.authentication.login(this.formGroup.get('email').value, this.formGroup.get('password').value)
+      .subscribe(response => {
+        this.router.navigate(['/dashboard']);
+      }, error => alert('ERROR'));
   }
 
   public reset(): void {
-    this.resetPassword.emit(true);
   }
 
   public toggleVisibility(): void {

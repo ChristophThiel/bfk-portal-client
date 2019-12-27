@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { OverviewComponent } from '../overview/overview.component';
+import { OverviewComponent } from './overview/overview.component';
 import { SchedulerComponent } from '../scheduler/scheduler.component';
 import { MarketComponent } from '../market/market.component';
 import { AdminComponent } from '../admin/admin.component';
+import { AuthenticationService } from '../core/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +19,7 @@ export class DashboardComponent {
       content: 'Übersicht',
       icon: 'star',
       isSelected: true,
-      route: 'overview'
+      route: '/dashboard'
     },
     {
       content: 'Kalendar',
@@ -39,7 +41,12 @@ export class DashboardComponent {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router, private authentication: AuthenticationService) { }
+
+  public logout(): void {
+    this.authentication.logout();
+    this.router.navigate(['']);
+  }
 
   public onRouterOutletActivate(event: any, sidenav: any) {
     this.items.forEach(item => item.isSelected = false);

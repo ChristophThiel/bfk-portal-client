@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -9,17 +10,18 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetComponent } from './reset/reset.component';
-import { DashboardEntryComponent } from './dashboard-entry/dashboard-entry.component';
-import { OverviewComponent } from './overview/overview.component';
+import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { MarketComponent } from './market/market.component';
-import { DocumentsComponent } from './documents/documents.component';
 import { AdminComponent } from './admin/admin.component';
 
 // Dialogs
 import { ConfirmationDialog } from './dialogs/confirmation/confirmation.dialog';
 import { AppointmentDialog } from './dialogs/appointment/appointment.dialog';
 import { SwapDialog } from './dialogs/swap/swap.dialog';
+
+// Services
+import { AuthenticationService } from './core/authentication.service';
 
 import { DxSchedulerModule } from 'devextreme-angular';
 
@@ -33,11 +35,9 @@ import { UserDialog } from './dialogs/user/user.dialog';
     LoginComponent,
     DashboardComponent,
     ResetComponent,
-    DashboardEntryComponent,
     OverviewComponent,
     SchedulerComponent,
     MarketComponent,
-    DocumentsComponent,
     AdminComponent,
     ConfirmationDialog,
     AppointmentDialog,
@@ -51,6 +51,7 @@ import { UserDialog } from './dialogs/user/user.dialog';
     FlexLayoutModule,
     AppRoutingModule,
     AppMaterialModule,
+    HttpClientModule,
     DxSchedulerModule
   ],
   entryComponents: [
@@ -60,7 +61,7 @@ import { UserDialog } from './dialogs/user/user.dialog';
     SwapDialog,
     UserDialog
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
