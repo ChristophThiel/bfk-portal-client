@@ -11,32 +11,38 @@ import { AppointmentService } from 'src/app/core/appointment.service';
 })
 export class OverviewComponent implements OnInit {
 
-  public appointments: any[] = [
-    {
-      title: 'Vollversammlung Marchtrenk',
-      from: '16. März 2020'
-    }
-  ];
-  public shifts: any[];
+  public appointments: any[] = [];
+  public shifts: any[] = [];
 
-  constructor(private shiftService: ShiftService, private appointmentService: AppointmentService, public dialog: MatDialog) {
-    this.shifts = this.shiftService.getShifts();
-  }
+  constructor(private shiftService: ShiftService, private appointmentService: AppointmentService, public dialog: MatDialog) { }
 
   public ngOnInit(): void {
-    this.appointmentService.getAppointments()
+    this.appointmentService.get()
       .subscribe(response => this.appointments = response);
+    this.shiftService.get()
+      .subscribe(response => this.shifts = response);
+  }
+
+  public getRequestsCountMessage(shift: any): string {
+    if (shift.requestsCount > 1)
+      return `${shift.requestsCount} Angebote`;
+    else if (shift.requestsCount === 1)
+      return '1 Angebot';
+    else
+      return 'Kein Angebot';
   }
 
   public offer(shift: any) {
     const dialogRef = this.dialog.open(ConfirmationDialog, {
       width: '80vw',
+      data: { id: shift.id },
       disableClose: true
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        shift.offered = true;
+        this.shiftService.offer(result.id);
+        shift.offered = !shift.offered;
       }
     });
   }

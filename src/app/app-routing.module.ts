@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { OverviewComponent } from './dashboard/overview/overview.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
-import { MarketComponent } from './market/market.component';
+import { MarketComponent } from './dashboard/market/market.component';
 import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './core/auth.guard';

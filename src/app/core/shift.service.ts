@@ -1,24 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShiftService {
 
-  constructor() { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
-  public getShifts(): any[] {
-    return [
-      {
-        title: 'Nachmittagsdienst',
-        from: 'Donnerstag, 13. Dezember 2019',
-        offered: false
-      },
-      {
-        title: 'Nachtdienst',
-        from: 'Mittwoch, 14. August 2019',
-        offered: false
+  public get(): Observable<any[]> {
+    return this.http.get<any[]>(`${environment.url}/shifts`, {
+      headers: {
+        'Authorization': sessionStorage.getItem('user')
       }
-    ];
+    });
+  }
+
+  public offer(shiftId: number): Observable<any> {
+    return this.http.get<any>(`${environment.url}/shifts/${shiftId}`, {
+      headers: {
+        'Authorization': sessionStorage.getItem('user')
+      }
+    });
   }
 }

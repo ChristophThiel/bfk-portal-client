@@ -7,8 +7,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ConfirmationDialog {
 
-  constructor(
-    public dialogRef: MatDialogRef<ConfirmationDialog>,
+  constructor(public dialogRef: MatDialogRef<ConfirmationDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
+  public closeDialog(): void {
+    this.dialogRef.close(this.data);
+  }
 }

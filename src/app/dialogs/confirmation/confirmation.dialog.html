@@ -4,5 +4,5 @@
 </div>
 <div fxFlexLayout="column" mat-dialog-actions>
   <button fxFlex mat-button [mat-dialog-close]="false">Nein</button>
-  <button color="accent" fxFlex mat-button [mat-dialog-close]="true" cdkFocusInitial>Ja</button>
+  <button color="accent" fxFlex mat-button cdkFocusInitial [mat-dialog-close]="true" (click)="closeDialog()">Ja</button>
 </div>

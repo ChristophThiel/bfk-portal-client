@@ -10,7 +10,7 @@ export class AppointmentService {
 
   constructor(private http: HttpClient) { }
 
-  public getAppointments(): Observable<any[]> {
-    return this.http.get<any[]>(`${environment.url}/appointments`, { headers: { 'Authorization': localStorage.getItem('user') } });
+  public get(): Observable<any[]> {
+    return this.http.get<any[]>(`${environment.url}/appointments`, { headers: { 'Authorization': sessionStorage.getItem('user') } });
   }
 }

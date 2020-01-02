@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OverviewComponent } from './overview/overview.component';
 import { SchedulerComponent } from '../scheduler/scheduler.component';
-import { MarketComponent } from '../market/market.component';
+import { MarketComponent } from './market/market.component';
 import { AdminComponent } from '../admin/admin.component';
 import { AuthenticationService } from '../core/authentication.service';
 import { Router } from '@angular/router';

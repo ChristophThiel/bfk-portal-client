@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationDialog } from '../dialogs/confirmation/confirmation.dialog';
-import { SwapDialog } from '../dialogs/swap/swap.dialog';
+import { ConfirmationDialog } from '../../dialogs/confirmation/confirmation.dialog';
+import { SwapDialog } from '../../dialogs/swap/swap.dialog';
 
 @Component({
   selector: 'app-market',

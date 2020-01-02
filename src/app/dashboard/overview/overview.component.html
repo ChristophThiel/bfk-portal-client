@@ -1,17 +1,20 @@
-<mat-tab-group mat-stretch-tabs fxFlex="100" [fxFlex.gt-md]="'1247px'">
+<mat-tab-group *ngIf="appointments.length !== 0 && shifts.length !== 0" mat-stretch-tabs fxFlex="100"
+  [fxFlex.gt-md]="'1247px'">
   <mat-tab label="Meine Dienste" *ngIf="shifts.length !== 0">
     <mat-accordion [displayMode]="'flat'">
       <mat-expansion-panel *ngFor="let shift of shifts">
-        <mat-expansion-panel-header collapsedHeight="auto">
+        <mat-expansion-panel-header collapsedHeight="auto" class="tickets-container-header">
           <mat-panel-title>
             <div>
               <h3>{{shift.title}}</h3>
               <h5>{{shift.from}}</h5>
+              <h5 *ngIf="shift.offered" style="color: #B71C1C">{{getRequestsCountMessage(shift)}}</h5>
             </div>
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <button mat-button color="primary" fxFlexFill (click)="offer(shift)"
-          [disabled]="shift.offered">{{shift.offered ? 'Angeboten' : 'Anbieten'}}</button>
+        <button *ngIf="shift.offered" mat-button fxFlexFill>Zum Marktplatz</button>
+        <button mat-button fxFlexFill color="primary"
+          (click)="offer(shift)">{{shift.offered ? 'Angebot zurückziehen' : 'Anbieten'}}</button>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-tab>

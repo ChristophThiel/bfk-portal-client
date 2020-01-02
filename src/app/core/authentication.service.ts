@@ -13,23 +13,24 @@ export class AuthenticationService {
   public currentUser: Observable<any>;
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<any>(localStorage.getItem('user'));
+    this.currentUserSubject = new BehaviorSubject<any>(sessionStorage.getItem('user'));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
   public login(email: string, password: string): Observable<any> {
     return this.http.post<any>(`${environment.url}/users/login`, { email, password })
       .pipe(map(response => {
+        console.log(response);
         if (response && response.token) {
-          localStorage.setItem('user', response.token);
-          this.currentUserSubject.next(response);
+          sessionStorage.setItem('user', response.token);
+          this.currentUserSubject.next(response.user);
         }
         return response;
       }));
   }
 
   public logout(): void {
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('user');
     this.currentUserSubject.next(null);
   }
 
