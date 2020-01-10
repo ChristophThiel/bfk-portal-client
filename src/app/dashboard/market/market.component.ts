@@ -2,68 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialog } from '../../dialogs/confirmation/confirmation.dialog';
 import { SwapDialog } from '../../dialogs/swap/swap.dialog';
+import { ShiftService } from 'src/app/core/shift.service';
+import { MessageService } from 'src/app/core/message.service';
 
 @Component({
   selector: 'app-market',
   templateUrl: './market.component.html',
   styleUrls: ['./market.component.scss']
 })
-export class MarketComponent {
+export class MarketComponent implements OnInit {
 
-  public items: any[] = [
-    {
-      content: 'Übersicht',
-      icon: 'star',
-      isSelected: false,
-      route: '/overview'
-    },
-    {
-      content: 'Kalendar',
-      icon: 'perm_contact_calendar',
-      isSelected: false,
-      route: '/scheduler'
-    },
-    {
-      content: 'Marktplatz',
-      icon: 'store',
-      isSelected: true,
-      route: '/market'
-    },
-    /*{
-      content: 'Dokumente',
-      icon: 'folder',
-      isSelected: false,
-      route: 'documents'
-    },*/
-    {
-      content: 'Administration',
-      icon: 'settings',
-      isSelected: false,
-      route: '/admin'
-    }
-  ];
-  public shifts: any[] = [
-    {
-      title: 'Nachmittagsdienst',
-      from: '13. August 2019',
-      user: 'Roland Pöttinger-Kloimstein',
-      phone: '+43 664 3203606'
-    },
-    {
-      title: 'Nachtdienst',
-      from: '14. August 2019',
-      user: 'Alexander Koblmüller',
-      phone: '+43 664 3203606'
-    },
-    {
-      title: 'Freier Dienst',
-      from: '24. Dezember 2019',
-      user: '',
-      phone: ''
-    }
-  ]
 
-  constructor(public dialog: MatDialog) { }
+  public shifts: any[] = []
+  public messages: any[] = [];
+
+  constructor(private shiftService: ShiftService, private messageService: MessageService, public dialog: MatDialog) { }
+
+  public ngOnInit(): void {
+    this.shiftService.market().subscribe(response => this.shifts = response);
+    this.messageService.get().subscribe(response => this.messages = response);
+  }
 
   public take(shift: any) {
     const dialogRef = this.dialog.open(ConfirmationDialog, {

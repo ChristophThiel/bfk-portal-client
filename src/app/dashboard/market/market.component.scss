@@ -1,5 +1,28 @@
 @import "../../../styles.scss";
 
+.empty-list {
+  padding-top: 16px;
+  text-align: center;
+
+  mat-icon {
+    font-size: 5rem;
+    height: 5rem;
+    width: 5rem;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  p {
+    font-weight: bold;
+    margin-top: 0;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.swap {
+  padding-bottom: 16px;
+  text-align: center;
+}
+
 mat-tab-group {
   height: calc(100vh - 56px - 32px);
 
@@ -23,5 +46,16 @@ mat-expansion-panel {
       margin: 0;
       font-weight: normal;
     }
+  }
+}
+
+div {
+  h4 {
+    margin: -4px 0 0 0;
+  }
+
+  h5 {
+    margin: -4px 0 0 0;
+    font-weight: normal;
   }
 }
